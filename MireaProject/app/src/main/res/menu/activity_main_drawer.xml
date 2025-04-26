@@ -24,6 +24,10 @@
             android:id="@+id/nav_webview"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Браузер" />
+        <item
+            android:id="@+id/nav_work"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Фоновая задача" />
 
     </group>
 </menu>
