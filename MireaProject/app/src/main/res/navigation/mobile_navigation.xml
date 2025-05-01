@@ -37,4 +37,20 @@
         android:name="com.mirea.mitrofanovms.mireaproject.ui.WorkFragment"
         android:label="Фоновая задача"
         tools:layout="@layout/fragment_work" />
+    <fragment
+        android:id="@+id/nav_sensor"
+        android:name="com.mirea.mitrofanovms.mireaproject.ui.SensorFragment"
+        android:label="Sensor Fragment"
+        tools:layout="@layout/fragment_sensor" />
+    <fragment
+        android:id="@+id/nav_camera"
+        android:name="com.mirea.mitrofanovms.mireaproject.ui.CameraFragment"
+        android:label="Camera Fragment"
+        tools:layout="@layout/fragment_camera" />
+    <fragment
+        android:id="@+id/nav_microphone"
+        android:name="com.mirea.mitrofanovms.mireaproject.ui.MicrophoneFragment"
+        android:label="Microphone Fragment"
+        tools:layout="@layout/fragment_microphone" />
+
 </navigation>

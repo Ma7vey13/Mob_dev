@@ -28,6 +28,18 @@
             android:id="@+id/nav_work"
             android:icon="@drawable/ic_menu_camera"
             android:title="Фоновая задача" />
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Камера" />
+        <item
+            android:id="@+id/nav_microphone"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Микрофон" />
+        <item
+            android:id="@+id/nav_sensor"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Компас" />
 
     </group>
 </menu>
