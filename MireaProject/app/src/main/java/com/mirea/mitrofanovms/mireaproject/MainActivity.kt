@@ -1,7 +1,10 @@
 package com.mirea.mitrofanovms.mireaproject
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.Menu
+import android.widget.EditText
+import androidx.appcompat.app.AlertDialog
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -27,9 +30,12 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.appBarMain.toolbar)
 
         binding.appBarMain.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null)
-                .setAnchorView(R.id.fab).show()
+            when (findNavController(R.id.nav_host_fragment_content_main).currentDestination?.id) {
+                R.id.nav_files -> showCreateFileDialog()
+                else -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null)
+                    .setAnchorView(R.id.fab).show()
+            }
         }
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
@@ -45,7 +51,23 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
+    private fun showCreateFileDialog() {
+        val dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_create_file, null)
+        val etDialogFileName = dialogView.findViewById<EditText>(R.id.etDialogFileName)
 
+        AlertDialog.Builder(this)
+            .setTitle("Создать новый файл")
+            .setView(dialogView)
+            .setPositiveButton("Создать") { _, _ ->
+                val filename = etDialogFileName.text.toString()
+                if (filename.isNotEmpty()) {
+                    findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.nav_files)
+                    // Можно добавить логику автоматического заполнения поля имени файла
+                }
+            }
+            .setNegativeButton("Отмена", null)
+            .show()
+    }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)

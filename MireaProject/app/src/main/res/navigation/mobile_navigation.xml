@@ -52,5 +52,16 @@
         android:name="com.mirea.mitrofanovms.mireaproject.ui.MicrophoneFragment"
         android:label="Microphone Fragment"
         tools:layout="@layout/fragment_microphone" />
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.mirea.mitrofanovms.mireaproject.ui.ProfileFragment"
+        android:label="Профиль"
+        tools:layout="@layout/fragment_profile"/>
+
+    <fragment
+        android:id="@+id/nav_files"
+        android:name="com.mirea.mitrofanovms.mireaproject.ui.FilesFragment"
+        android:label="Работа с файлами"
+        tools:layout="@layout/fragment_files"/>
 
 </navigation>
