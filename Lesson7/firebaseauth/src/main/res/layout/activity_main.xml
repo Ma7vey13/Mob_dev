@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/firebase_user_management"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/label_emailpassword"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/desc_emailpassword"
+            android:textSize="14sp" />
+
+        <!-- Status and detail text -->
+        <TextView
+            android:id="@+id/statusTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/detailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textSize="14sp" />
+
+        <!-- Включение layout с кнопками -->
+        <include
+            android:id="@+id/emailPasswordButtons"
+            layout="@layout/email_password_buttons"/>
+
+        <!-- Включение layout с полями -->
+        <include
+            android:id="@+id/emailPasswordFields"
+            layout="@layout/email_password_fields"/>
+
+        <!-- Включение layout с кнопками для авторизованного состояния -->
+        <include
+            android:id="@+id/signedInButtons"
+            layout="@layout/signed_in_buttons"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
