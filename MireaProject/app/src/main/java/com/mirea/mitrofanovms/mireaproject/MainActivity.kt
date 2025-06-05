@@ -40,8 +40,6 @@ class MainActivity : AppCompatActivity() {
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,R.id.nav_data, R.id.nav_webview, R.id.nav_work, R.id.nav_camera, R.id.nav_microphone,
@@ -62,14 +60,12 @@ class MainActivity : AppCompatActivity() {
                 val filename = etDialogFileName.text.toString()
                 if (filename.isNotEmpty()) {
                     findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.nav_files)
-                    // Можно добавить логику автоматического заполнения поля имени файла
                 }
             }
             .setNegativeButton("Отмена", null)
             .show()
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
         return true
     }
