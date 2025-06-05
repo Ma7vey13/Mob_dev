@@ -78,7 +78,6 @@ public class SensorFragment extends Fragment implements SensorEventListener {
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
-        // Обработка изменения точности сенсоров
     }
 
     @Override
